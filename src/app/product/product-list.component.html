@@ -1,0 +1,46 @@
+<div class="card">
+  <div class="card-header">{{ pageTitle }}</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">Filter by:</div>
+      <div class="col-md-4">
+        <input type="text" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Filtered by:</h4>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table
+        class="table"
+        aria-describedby="List of products"
+        *ngIf="products.length"
+      >
+        <thead>
+          <tr>
+            <th id="buttonImage">
+              <button class="btn btn-primary">Show Image</button>
+            </th>
+            <th id="product">Product</th>
+            <th id="code">Code</th>
+            <th id="status">Available</th>
+            <th id="price">Price</th>
+            <th id="star">5 Star Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td id="buttonImage"></td>
+            <td id="productName">{{ product.productName }}</td>
+            <td id="productCode">{{ product.productCode }}</td>
+            <td id="releaseDate">{{ product.releaseDate }}</td>
+            <td id="productPrice">{{ product.price }}</td>
+            <td id="startRating">{{ product.starRating }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
